@@ -1,0 +1,74 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+<%@ page isELIgnored="false"%>
+<%@page import="com.entity.jobs"%>
+<%@ page language="java"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.sql.Connection"%>
+<%@page import="com.dao.jobDAO"%>
+<%@page import="com.db.DBconnect"%>
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<%@include file="allmatreal/allcss.jsp"%>
+
+<title>User : View Job</title>
+</head>
+<body style="background-color: #f0f1f2">
+<%-- 	<c:if test="${userobj.role ne 'admin' }">
+<c:redirect url="login.jsp"></c:redirect>
+
+</c:if> --%>
+	<%@include file="allmatreal/navbar.jsp"%>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+	
+	
+	<%
+				int id =Integer.parseInt(request.getParameter("id"));
+			jobDAO jd= new jobDAO(DBconnect.getcon());
+				jobs j = jd.getJobById(id);
+				%>
+				
+				
+				<div class="card mt-5">
+					<div class="card-body">
+					<div class="text-center text-primary">
+					
+					<i class="far fa-clipboard fa-2x"></i>
+					</div>
+					<h6><%=j.getTitle() %></h6>
+					<p><%=j.getDescription() %></p>
+							<br>
+							<div class="form-row">
+							
+							<div class="form-group col-md-3">
+							<input type="text" class="form-control form-control-sm" value="Location: <%=j.getLocation() %>" readonly="readonly" >
+							</div>
+							<div class="form-group col-md-3">
+							<input type="text" class="form-control form-control-sm" value="Category: <%=j.getCategory() %>" readonly="readonly" >
+							</div>
+							</div>
+							<h6>Publish Date:
+							<%=j.getPdate().toString() %></h6>
+					
+					</div>
+
+				</div>
+
+		
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

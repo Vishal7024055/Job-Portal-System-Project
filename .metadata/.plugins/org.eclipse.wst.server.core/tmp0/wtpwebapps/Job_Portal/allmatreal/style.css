@@ -1,0 +1,163 @@
+/* bg-light {
+	background: #283593 !important;
+}*/
+
+.navbar .nav-item .nav-link {
+	font-size: 20px;
+	color: white;
+}
+
+.navbar .nav-item:hover .nav-link {
+	background: white;
+	color: black;
+	border-radius: 10px;
+
+}
+
+.containerr {
+	width: 100%;
+	height: 79vh;
+}
+
+.btn {
+	margin-right: 3px;
+}
+
+.containerr .text-center h1 {
+	color: white;
+	padding: 4;
+	font-weight: bold;
+
+}
+
+.footer_bg {
+	background-color: blue;
+	padding: 0.5%;
+	margin-top: 30%;
+}
+
+.footer_txt {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 15px;
+}
+/*body{
+	background: url(img.jpg);
+	background-size: cover;
+}*/
+
+.box {
+
+	margin-top: 10%;
+	margin-left: 40%;
+	border: 2px solid white;
+	width: 25%;
+	height: 55%;
+	padding-left: 42px;
+	padding-bottom: 34px;
+	background-color: rgb(132, 198, 149);
+	font-weight: bold;
+	opacity: 1px;
+
+
+}
+
+.box .logomini .user_email {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+
+.box .logomini .password {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+
+.box .logomini .submit{
+	 border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+    background-color: yellow;
+    margin-left: 51px;
+
+}
+.sbox {
+
+	margin-top: 2%;
+	margin-left: 40%;
+	border: 2px solid white;
+	width: 25%;
+	height: 55%;
+	padding-left: 42px;
+	padding-bottom: 34px;
+	background-color: rgb(132, 198, 149);
+	font-weight: bold;
+	opacity: 1px;
+
+
+}
+.sbox .logomini .fname {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+.sbox .logomini .qname {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+.sbox .logomini .email {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+.sbox .logomini .spassword {
+	border-radius: 10px;
+	padding-left: 64px;
+	margin: 10px 0;
+	border: 2px solid white;
+}
+.sbox .logomini .submit{
+	 border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+    background-color: yellow;
+    margin-left: 51px;
+
+}
+.admin-main{
+	background: url(admin.jpg);
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+.admin-main .text-admin{
+	text-align: center;
+	
+}
+.admin-main .text-admin h1{
+	color: black;
+	padding: 4;
+	font-weight: bold;
+}
+.addjobmain{
+	margin-left: 40%;
+}
+
+
+
+
+
+
+
+
+
+
