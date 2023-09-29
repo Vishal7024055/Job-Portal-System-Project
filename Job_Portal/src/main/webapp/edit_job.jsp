@@ -19,62 +19,110 @@
 <title>Edit Job</title>
 </head>
 <body>
-<%@include file="allmatreal/navbar.jsp"%>
-<c:if test="${userobj.role ne 'admin' }">
-<c:redirect url="login.jsp"></c:redirect>
+	<%@include file="allmatreal/navbar.jsp"%>
 
-</c:if>
-	<form action="update" method="post">
-		
-		<div style="margin-left: 15%; border-radius: 10px; margin-right: 15%;"
-			class="addjobmain">
-			<div
-				style="border: 2px solid black; padding-bottom: 5%; padding-left: 10%; padding-right: 10%; padding-top: 6%;"
-				class="overview ">
-				<div class="listall">
+	<div class="container p-2">
+		<div class="col-md-10 offset-md-1">
+			<div class="card">
 
+				<div class="card-body">
+					<div class="text-center text-success">
+						<i class="fas fa-user-friends fa-3x"></i>
+						<c:if test="${not empty succMsg}">
+							<div class="alert alert-success" role="alert">${ succMsg}</div>
+							<c:remove var="succMsg" />
 
-					<%
+						</c:if>
+						<h5>Edit Job</h5>
+						
+						
+						
+					</div>
+				<form action="update" method="post">
+				
+				
+				<%
 					int id = Integer.parseInt(request.getParameter("id"));
 					jobDAO dao = new jobDAO(DBconnect.getcon());
 
 					jobs j = dao.getJobById(id);
 					%>
-
-
-					<c:if test="${not empty succMsg}">
+						<c:if test="${not empty succMsg}">
 
 						<div class="alert alert-success" role="alert">${ succMsg}</div>
 						<c:remove var="succMsg" />
 
 					</c:if>
-
 					<input type="hidden" value="<%=j.getId()%>" name="id">
+						<div class="form-group">
+							<label>Enter Title:</label> <input type="text"
+								name="add_job_title" value="<%=j.getTitle()%>" required class="form-control">
 
-					<h5>Enter Title :</h5>
-					<input style="width: 80%" type="text" name="add_job_title"
-						value="<%=j.getTitle()%>" class="title">
-					<div class="three"
-						style="height: 6rem; display: flex; justify-content: center; align-items: center; margin-left: -32px;">
-						<h5>Enter Location :</h5>
-						<br> <input type="text" value="<%=j.getLocation()%>"
-							name="add_job_location" class="location">
-						<h5>Enter Category :</h5>
-						<br> <input type="text" value="<%=j.getCategory()%>"
-							name="add_job_category" class="category">
-						<h5>Status :</h5>
-						<br> <input type="text" value="<%=j.getStatus()%>"
-							class="status" name="add_job_status">
-					</div>
-					<h5>Enter Discription :</h5>
-					<input style="padding-bottom: 25%; width: 80%;" type="text"
-						name="disc" value="<%=j.getDescription()%>" class="discription">
-					<button type="submit" class="jobsubmit">Update Job</button>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label>Location:</label> <select name="add_job_location"
+									class="custom-select"  id="inlineFormCustomSelectPref">
+									<option value="<%=j.getLocation()%>"><%=j.getLocation()%></option>
+									<option value="Noida">Noida</option>
+									<option value="Pune">Pune</option>
+									<option value="Mumbai">Mumbai</option>
+									<option value="Banglore">Banglore</option>
+									<option value="Indore">Indore</option>
+									<option value="Delhi">Delhi</option>
+
+								</select>
+
+							</div>
+
+							<div class="form-group col-md-4">
+								<label>Category:</label> <select name="add_job_category"
+									class="custom-select"  id="inlineFormCustomSelectPref">
+									<option value="<%=j.getCategory()%>"><%=j.getCategory()%></option>
+									<option value="IT">IT</option>
+									<option value="Developer">Developer</option>
+									<option value="Banking">Banking</option>
+									<option value="Sales">Sales</option>
+									<option value="Other">Other</option>
+
+								</select>
+
+							</div>
+
+
+							<div class="form-group col-md-4">
+								<label>Status:</label> <select name="add_job_status"
+									class="custom-select" >
+									<option value="<%=j.getStatus()%>"><%=j.getStatus()%></option>
+									<option value="Active">Active</option>
+									<option value="Inactive">Inactive</option>
+
+								</select>
+
+							</div>
+
+
+						</div>
+						<div class="form-group">
+							<label>Enter Description:</label>
+							<textarea required rows="6" cols="" name="disc"
+								class="form-control" ><%=j.getDescription()%></textarea>
+						</div>
+						<button class="btn btn-success" name="">Publish Job</button>
+
+
+					</form>
+
+
 				</div>
 
 			</div>
 
+
 		</div>
-	</form>
+
+	</div>
+
+
 </body>
 </html>
